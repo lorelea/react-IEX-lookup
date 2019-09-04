@@ -1,0 +1,55 @@
+@import 'styles/_colors.scss';
+@import 'styles/scrollbar.scss';
+
+.App {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100vh;
+  overflow: hidden;
+  background-color: $app-bg;
+  color: $app-text;
+
+  &-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 10vmin;
+    pointer-events: none;
+  }
+  &-header {
+    background-color: $app-header-bg;
+    // min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: $app-header-text;
+  }
+  &-main {
+    flex: 1;
+    overflow: auto;
+  }
+  &-footer {
+    padding: 0.5rem;
+  }
+  &-link {
+    color: $app-link-text;
+    
+    &:hover {
+      color: darken($app-link-text, 30);
+    }
+  }
+  &-component {
+    margin: 2rem auto 0 auto;
+    max-width: 600px;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

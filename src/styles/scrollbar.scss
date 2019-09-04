@@ -1,0 +1,27 @@
+/**
+* CUSTOM SCROLLBAR
+*/
+$scrollbar: (
+  width: 8px,
+  background: #e1e1e1,
+  thumb: #757575
+);
+
+::-webkit-scrollbar {
+  width: map-get($scrollbar, width);
+  height: map-get($scrollbar, width);
+  border-radius: map-get($scrollbar, width);
+}
+::-webkit-scrollbar-button {
+  display:none;
+}
+::-webkit-scrollbar-corner,
+::-webkit-scrollbar-track {
+  background: map-get($scrollbar, background);
+  background: var(--scrollbar-bg, map-get($scrollbar, background));
+}
+::-webkit-scrollbar-thumb {
+  background: map-get($scrollbar, thumb);
+  background: var(--scrollbar-thumb, map-get($scrollbar, thumb));
+  border-radius: map-get($scrollbar, width);
+}

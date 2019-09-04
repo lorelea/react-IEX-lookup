@@ -1,0 +1,82 @@
+.my-autocomplete {
+    $padding: 1em 0.5em;
+    $iconSize: 1.5em;
+    $colors: (
+        bg: #ffffff,
+        bg-hover: rgba(128,128,128,.20), 
+        border: gray, 
+        color: rgba(0,0,0,.73),
+        icon: gray
+    );
+
+    position:relative;
+    width: 100%;
+    background-color: var(--input-bg, map-get($colors, bg));
+    box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 4px 1px rgba(0,0,0,.18);
+    color: var(--input-color, map-get($colors, color));
+
+    input {
+        width: 100%;
+        border: none;
+        padding: $padding;
+        outline: none;
+        border: 1px solid var(--input-border, map-get($colors, border));
+    }
+
+    ul {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        max-height: 50vh;
+        overflow: auto;
+        list-style-type: none;
+        text-align: start;
+        margin: 0;
+        padding: 0;
+        border: 1px solid var(--input-border, map-get($colors, border));
+        border-top: none;
+        background-color: var(--input-bg, map-get($colors, bg));
+        box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 4px 1px rgba(0,0,0,.18);
+
+        li {
+            cursor: pointer;
+            padding: $padding;
+
+            &:hover {
+                text-decoration: underline;
+                background-color: var(--input-bg--hover, map-get($colors, bg-hover));
+            }
+        }
+    }
+
+    .clearable {
+        
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: $iconSize;
+        height: $iconSize;
+        opacity: .3;
+        transform: translate(-50%, -50%);
+        will-change: opacity;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        &:before, &:after {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 2px;
+            background-color: var(--input-icon, map-get($colors, icon));
+        } 
+        &:before {
+            transform: rotate(45deg);
+        }
+        &:after {
+            transform: rotate(-45deg);
+        }
+    }
+}

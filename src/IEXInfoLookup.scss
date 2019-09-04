@@ -1,0 +1,25 @@
+@import 'styles/_colors.scss';
+
+.my-iex_info_lookup {
+    &-autocomplete {
+        color: $app-text--dark;
+        text-align: left;
+    }
+
+    dl {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-height: 60vh;
+        overflow: auto;
+
+        dt {
+            font-weight: bold;
+            color: darken($app-text, 30);
+        }
+        dd {
+            margin-bottom: 1em;
+        }
+    }
+}
