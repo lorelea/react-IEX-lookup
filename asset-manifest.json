@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/react-IEX-lookup/static/css/main.18efbc50.chunk.css",
+    "main.js": "/react-IEX-lookup/static/js/main.ee4c3a8b.chunk.js",
+    "main.js.map": "/react-IEX-lookup/static/js/main.ee4c3a8b.chunk.js.map",
+    "runtime~main.js": "/react-IEX-lookup/static/js/runtime~main.50c53b4c.js",
+    "runtime~main.js.map": "/react-IEX-lookup/static/js/runtime~main.50c53b4c.js.map",
+    "static/js/2.14c353bc.chunk.js": "/react-IEX-lookup/static/js/2.14c353bc.chunk.js",
+    "static/js/2.14c353bc.chunk.js.map": "/react-IEX-lookup/static/js/2.14c353bc.chunk.js.map",
+    "index.html": "/react-IEX-lookup/index.html",
+    "precache-manifest.1ba64d232e21d1c707cb6d6f3c69a906.js": "/react-IEX-lookup/precache-manifest.1ba64d232e21d1c707cb6d6f3c69a906.js",
+    "service-worker.js": "/react-IEX-lookup/service-worker.js",
+    "static/css/main.18efbc50.chunk.css.map": "/react-IEX-lookup/static/css/main.18efbc50.chunk.css.map",
+    "static/media/logo.svg": "/react-IEX-lookup/static/media/logo.5d5d9eef.svg"
+  }
+}
