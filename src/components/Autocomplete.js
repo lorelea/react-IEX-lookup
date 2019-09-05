@@ -6,7 +6,7 @@ class Autocomplete extends React.Component {
         super(props);
         this.state = {
             suggestions: [],
-            query: ''
+            query: this.props.value || ''
         };
     }
 
@@ -49,7 +49,7 @@ class Autocomplete extends React.Component {
 
     render () {
         return (
-            <div className="my-autocomplete">
+            <div className={"my-autocomplete " + this.props.className}>
                 <input
                     type="text"
                     ref={input => this.search = input}

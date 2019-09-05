@@ -1,7 +1,8 @@
 import React from 'react';
 import './IEXInfoLookup.scss';
 import WindowedSelect, { createFilter } from 'react-windowed-select';
-// import Autocomplete from './Autocomplete';
+import Autocomplete from './Autocomplete';
+import Switch from './Switch'
 import APICall from 'APICall';
 
 class IEXInfoLookup extends React.Component {
@@ -11,7 +12,8 @@ class IEXInfoLookup extends React.Component {
             symbols: [],
             activeSymbol: '',
             price: '',
-            company: {}
+            company: {},
+            showAutocomplete: false
         };
     }
 
@@ -49,6 +51,12 @@ class IEXInfoLookup extends React.Component {
         });
     }
 
+    handleSwitchToggle = (isChecked) => {
+        this.setState({
+            showAutocomplete: isChecked
+        });
+    }
+
     componentDidMount () {
         this.getAllSymbols();
     }
@@ -76,17 +84,22 @@ class IEXInfoLookup extends React.Component {
     }
 
     render () {
-        // const items = this.state.symbols.map(item => item.symbol);
+        const items = this.state.showAutocomplete ? this.state.symbols.map(item => item.symbol) : [];
         const options = this.state.symbols.map(item => ({ value: item.symbol, label: item.symbol }));
         return (
             <div className="my-iex_info_lookup">
-                {/* <Autocomplete
+                <Switch
+                    value={this.state.showAutocomplete}
+                    onSwitchToggle={this.handleSwitchToggle}
+                />
+                {this.state.showAutocomplete && <Autocomplete
                     items={items}
                     placeholder="Start to type..."
+                    value={this.state.activeSymbol}
                     onValueUpdated={this.handleSymbolChanged}
-                /> */}
+                />}
                 <WindowedSelect
-                    className="my-iex_info_lookup-autocomplete"
+                    className={"my-iex_info_lookup-autocomplete " + (this.state.showAutocomplete ? 'hide' : '')}
                     filterOption={createFilter({ ignoreAccents: false })}
                     isLoading={!options.length}
                     options={options}

@@ -1,0 +1,80 @@
+.onoffswitch {    
+    $color: (
+        active: #34A7C1,
+        inactive: #FFFFFF
+    );
+    $border: 2px solid rgba(153, 153, 153, .3);
+    $size: 22px;
+
+
+    position: relative; 
+    width: 90px;
+    margin-bottom: 1em;
+    -webkit-user-select:none; 
+    user-select:none;
+    
+    &-checkbox {
+        display: none;
+    }
+    &-label {
+        display: block; 
+        overflow: hidden; 
+        cursor: pointer;
+        border: $border; 
+        border-radius: 20px;
+    }
+    &-inner {
+        display: block; 
+        width: 200%; 
+        margin-left: -100%;
+        transition: margin 0.3s ease-in 0s;
+    
+        &:before, &:after {
+            display: block; 
+            float: left; 
+            width: 50%; 
+            height: 30px; 
+            padding: 0; 
+            line-height: 30px;
+            font-size: 14px; 
+            color: map-get($color, inactive); 
+            font-family: Trebuchet, Arial, sans-serif; 
+            font-weight: bold;
+            box-sizing: border-box;
+        }
+        &:before {
+            content: "ON";
+            padding-left: 10px;
+            text-align: left;
+            background-color: map-get($color, active); 
+            color: map-get($color, inactive); 
+        }
+        &:after {
+            content: "OFF";
+            padding-right: 10px;
+            background-color: #EEEEEE; 
+            color: #999999;
+            text-align: right;
+        }
+    }
+    &-switch {
+        display: block; 
+        width: $size;
+        height: $size;
+        margin: 6px;
+        background: map-get($color, inactive);
+        position: absolute; 
+        top: 0; 
+        bottom: 0;
+        right: 56px;
+        border: $border; 
+        border-radius: 20px;
+        transition: all 0.3s ease-in 0s; 
+    }
+    &-checkbox:checked + &-label &-inner {
+        margin-left: 0;
+    }
+    &-checkbox:checked + &-label &-switch {
+        right: 0px; 
+    }
+}
