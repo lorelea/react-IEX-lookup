@@ -13,7 +13,9 @@ function getSymbolInfo(symbol) {
         .catch(handleError)
 }
 function getLatestPrice(symbol) {
-    return fetch(`${apiConfig.servicesApi}/stock/${symbol}/price?token=${apiConfig.apiToken}`)
+    // NOTE: not available for free account
+    // return fetch(`${apiConfig.servicesApi}/stock/${symbol}/price?token=${apiConfig.apiToken}`)
+    return fetch(`${apiConfig.servicesApi}/stock/${symbol}/quote/latestPrice?token=${apiConfig.apiToken}`)
         .then(checkStatus)
         .then(response => response.json())
         .catch(handleError)

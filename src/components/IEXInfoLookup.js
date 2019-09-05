@@ -2,7 +2,7 @@ import React from 'react';
 import './IEXInfoLookup.scss';
 import WindowedSelect, { createFilter } from 'react-windowed-select';
 // import Autocomplete from './Autocomplete';
-import APICall from './APICall';
+import APICall from 'APICall';
 
 class IEXInfoLookup extends React.Component {
     constructor (props) {
@@ -88,8 +88,9 @@ class IEXInfoLookup extends React.Component {
                 <WindowedSelect
                     className="my-iex_info_lookup-autocomplete"
                     filterOption={createFilter({ ignoreAccents: false })}
+                    isLoading={!options.length}
                     options={options}
-                    value={{ value: this.state.activeSymbol, label: this.state.activeSymbol }}
+                    value={options.find(option => option.value === this.state.activeSymbol)}
                     onChange={(payload) => this.handleSymbolChanged(payload.value)}
                 />
                 {this.renderSymbolInfo()}

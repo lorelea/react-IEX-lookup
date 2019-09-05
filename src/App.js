@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.scss';
-import IEXInfoLookup from './IEXInfoLookup'
+import logo from 'logo.svg';
+import 'App.scss';
+import IEXInfoLookup from 'components/IEXInfoLookup'
 
 function App() {
   return (
